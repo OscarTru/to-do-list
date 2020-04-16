@@ -21,7 +21,7 @@ const itemsSchema = {
 const Item = mongoose.model('Item', itemsSchema);
 
 const item1 = new Item({
-	name: "Let's get started",
+	name: "Comienza",
 });
 
 const defaultItems = [item1];
@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 			});
 			res.redirect('/');
 		} else {
-			res.render('list', { listTitle: 'Today', newListItems: foundItems });
+			res.render('list', { listTitle: 'Hoy', newListItems: foundItems });
 		}
 	});
 });
@@ -83,7 +83,7 @@ app.post('/', function (req, res) {
 		name: itemName,
 	});
 
-	if (listName === 'Today') {
+	if (listName === 'Hoy') {
 		item.save();
 		res.redirect('/');
 	} else {
@@ -99,7 +99,7 @@ app.post('/delete', function (req, res) {
 	const checkedItemId = req.body.checkbox;
 	const listName = req.body.listName;
 
-	if (listName === 'Today') {
+	if (listName === 'Hoy') {
 		Item.findByIdAndRemove(checkedItemId, function (err) {
 			if (!err) {
 				console.log('Successfully deleted checked item.');

@@ -4,6 +4,9 @@ html {
   min-height: 1000px;
   font-family: 'helvetica neue';
 }
+body{
+  background-color: #ffffff00;
+}
 
 h1 {
   color: #fff;
@@ -34,6 +37,15 @@ h1 {
   border-bottom: 0;
 }
 
+.nav-link{
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+.nav-link:hover{
+  color:  rgb(96, 160, 255);
+}
+
 input:checked+p {
   text-decoration: line-through;
   text-decoration-color: rgb(96, 160, 255);
@@ -41,6 +53,10 @@ input:checked+p {
 
 input[type="checkbox"] {
   margin: 20px;
+}
+
+img {
+  width: 6rem;
 }
 
 p {
